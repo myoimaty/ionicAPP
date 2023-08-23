@@ -45,4 +45,17 @@ export class JugadoresService {
       })
     }
   }
+
+  //metodo que agrega
+  addJugador(nombre: string,imagen: string,fecha: string,descripcion: string){
+    this.jugadores.push({
+      nombre, imagen, fecha, descripcion, id: this.jugadores.length + 1 + ""
+    })
+  }
+  //metodo borrar
+  deleteJugador(id: string){
+    this.jugadores = this.jugadores.filter(aux => {
+      return aux.id !==id
+    })
+  }
 }

@@ -57,6 +57,11 @@ const routes: Routes = [
     path: 'fichaje',
     loadChildren: () => import('./pages/fichaje/fichaje.module').then( m => m.FichajePageModule)
   },
+  {
+    path: 'agregar',
+    loadChildren: () => import('./pages/jugadores/agregar/agregar.module').then( m => m.AgregarPageModule)
+  },
+
 
 
 

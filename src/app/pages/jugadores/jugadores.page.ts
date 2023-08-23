@@ -11,13 +11,18 @@ export class JugadoresPage implements OnInit {
 
   listaJugadores: Jugador[]=[];
 
-  constructor(private JugadoresService: JugadoresService) { }
+  constructor(private router:Router, private JugadoresService: JugadoresService) { }
 
   ngOnInit() {
     //toma lo de jugadores services y los mete en lista jugadores
     this.listaJugadores = this.JugadoresService.getAll()
   }
-
-
-
+  //metodo que se ejecuta al volver a la pagina
+  ionViewWillEnter() {
+    //toma lo de jugadores services y los mete en lista jugadores
+    this.listaJugadores = this.JugadoresService.getAll()
+  }
+  addJugador(){
+    this.router.navigate(['/agregar']);
+  }
 }
